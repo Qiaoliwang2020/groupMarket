@@ -1,6 +1,6 @@
 applications:
   - path: .
-    name: groupMarket
+    name: a
     environment_json: {}
     memory: 256M
     instances: 1
