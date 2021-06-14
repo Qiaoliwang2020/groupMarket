@@ -62,3 +62,10 @@
             rotate(-45deg)
             translateY(0px);
 }
+.float-btn{
+    position: fixed;
+    margin: auto;
+    right: 0px;
+    left: 0px;
+    bottom: 10px;
+}
