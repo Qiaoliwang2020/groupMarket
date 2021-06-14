@@ -1,0 +1,97 @@
+<div class="container card-details-view">
+    <h1 class="page-title center">Melbourne</h1>
+    <div class="page-nav-profile">
+        <div class="page-nav-user">
+                <span class="user-icon center">
+                  <img id="user-icon" src="/assets/icon/user.png" width="25" height="25">
+               </span>
+            <div class="ml-10">Hello <span id="userNameSpan"></span></div>
+        </div>
+        <a href='/home/home.html'>back</a>
+    </div>
+    <div class="card-details mt-20" style="background: <%= cardData[0].cardBackground %>;">
+        <div class="card-content" >
+            <div class="card-balance">
+                <div class="card-label">Balance</div>
+                <div class="card-amount"><%= cardData[0].balance %></div>
+            </div>
+            <div class="card-icon">
+                <img src="/assets/icon/public-transport.png" width="35" height="35">
+            </div>   
+        </div>
+        <div class="card-number mt-10">
+            <%= cardData[0]._id %>
+        </div>
+        <div class="card-barcode">
+            <svg id="barcode"></svg>
+        </div>
+        <div class="card-bottom mt-10">
+            <span> <%= cardData[0].city %></span>
+            <span> expire <%= cardData[0].expire %></span>
+        </div>
+    </div>
+    <div class="create-time mt-20">
+        Create Time:  <%= cardData[0].createTime %>
+    </div>
+    <div class="opertation-bar mt-20">
+        <a href="#modal-withdraw" class="modal-trigger">Withdraw</a>
+        <a href="#modal-payment" class="modal-trigger">Recharge</a>
+    </div>
+    <div id="modal-payment" class="modal bottom-sheet">
+        <div class="modal-content">
+            <div class="modal-close-icon modal-close">x</div>
+            <h4 class="modal-title">Payment</h4>
+            <div>
+                <label class="mb-20">Select a plan?</label>
+                <div class="amount-wrap mt-10 mb-10" id="amount">
+                    <label class="amount-label">
+                        <input name="amount" type="radio" value="10" />
+                        <span>$10</span>
+                    </label>
+                    <label class="amount-label">
+                        <input name="amount" type="radio" value="20" />
+                        <span>$20</span>
+                    </label>
+                    <label class="amount-label">
+                        <input name="amount" type="radio" value="30" />
+                        <span>$30</span>
+                    </label>
+                    <label class="amount-label">
+                        <input name="amount" type="radio" value="50" />
+                        <span>$50</span>
+                    </label>
+                    <label class="amount-label">
+                        <input name="amount" type="radio" value="others" />
+                        <span>others</span>
+                    </label>
+                    <div class="other-amount mt-10 hide"><input  type="number" id="othersAmount"  placeholder="enter an amount"  /></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="button-primary" id="pay">Pay now</a>
+        </div>
+    </div>
+
+    <div id="modal-withdraw" class="modal bottom-sheet">
+        <div class="modal-content">
+            <div class="modal-close-icon modal-close">x</div>
+            <h4 class="modal-title">Withdraw</h4>
+            <div>
+                <label class="mb-20">Enter a number you want withdraw from this card.</label>
+                <div class="mt-10"><input  type="text" id="withdraw-amount" /></div>
+            </div>
+            <div class="withdraw-all-bar">
+                <span>balance:$<b id="totalAmount"><%= cardData[0].balance %></b></span>
+                <a id="withdrawAll">Withdraw all</a>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="button-primary" id="withdraw">Withdraw now</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.3/dist/JsBarcode.all.min.js"></script>
+<script src="/card.js"></script>
+
