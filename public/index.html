@@ -13,7 +13,7 @@
 
 <body>
 <header id="top" class="w-full flex flex-col fixed sm:relative bg-white pin-t pin-r pin-l z-10">
-    <nav id="site-menu" class="flex flex-col sm:flex-row w-full justify-between items-center px-4 sm:px-6 py-1 bg-white shadow sm:shadow-none">
+    <nav id="site-menu" class="flex flex-col py-4 sm:flex-row w-full justify-between items-center px-4 sm:px-6 sm:py-1 bg-white shadow-none sm:shadow">
         <div class="w-full sm:w-auto self-start sm:self-center flex flex-row sm:flex-none flex-no-wrap justify-between items-center">
             <button id="menuBtn" class="hamburger block sm:hidden focus:outline-none" type="button" onclick="navToggle();">
                 <span class="hamburger__top-bun"></span>
@@ -30,7 +30,61 @@
     </nav>
 </header>
 <main>
-    <div class="container pt-12">
+    <div class="container  mx-auto px-4 pt-20">
+        <div class="flex item-center">
+            <div class="text-md">Choose your location</div>
+            <div class="mt-1 ml-2">
+                <svg class="h-5 w-5 text-black"  width="24" height="10" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"/>
+                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
+                </svg>
+            </div>
+        </div>
+        <div class="flex search-bar bg-gray-100 w-full rounded-full py-1 my-4 pl-2">
+            <input class="flex-1 text-md bg-gray-100 pl-2 rounded-full focus:outline-none" type="text" placeholder="search for a store" />
+            <div class="px-3 py-2 cursor-pointer">
+                <svg class="h-5 w-5 text-black"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"/>
+                    <circle cx="10" cy="10" r="7" />
+                    <line x1="21" y1="21" x2="15" y2="15" />
+                </svg>
+            </div>
+        </div>
+        <div class="mt-20 mb-8">
+            <a class="shadow-md rounded-full px-4 py-2 bg-black  font-medium text-white mr-2">Featured</a>
+            <a class="shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Popular</a>
+            <a class="shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Recent</a>
+        </div>
+        <div class="md:flex">
+            <div class="divide-y divide-gray-100 mt-5 md:mr-4">
+                <div class="max-w-2xl mx-auto bg-white rounded-row-item shadow-md overflow-hidden md:max-w-xs ">
+                    <div class="flex md:block">
+                        <div class="flex-shrink-0">
+                            <img class="h-36 w-36  object-cover md:w-full" src="https://images.unsplash.com/photo-1506374322094-6021fc3926f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3lkbmV5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Man looking at item at a store">
+                        </div>
+                        <div class="p-4">
+                            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Big Mouth Burgers</a>
+                            <p class="mt-2 text-gray-500">American food</p>
+                            <p class="mt-2 text-gray-500">1.6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divide-y divide-gray-100 mt-5">
+                <div class="max-w-2xl mx-auto bg-white rounded-row-item shadow-md overflow-hidden md:max-w-xs ">
+                    <div class="flex md:block">
+                        <div class="flex-shrink-0">
+                            <img class="h-36 w-36  object-cover md:w-full" src="https://images.unsplash.com/photo-1506374322094-6021fc3926f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3lkbmV5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Man looking at item at a store">
+                        </div>
+                        <div class="p-4">
+                            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Big Mouth Burgers</a>
+                            <p class="mt-2 text-gray-500">American food</p>
+                            <p class="mt-2 text-gray-500">1.6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <a href="/home/home.html" class="float-btn inline-flex items-center justify-center w-14 h-14 mr-2 text-indigo-100 transition-colors duration-150 bg-black rounded-full focus:outline-none hover:bg-gray-900">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
         </a>

@@ -62,6 +62,9 @@
             rotate(-45deg)
             translateY(0px);
 }
+.rounded-row-item{
+    border-radius: 20px;
+}
 .float-btn{
     position: fixed;
     margin: auto;
