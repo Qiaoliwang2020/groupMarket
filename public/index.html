@@ -50,26 +50,12 @@
                 </svg>
             </div>
         </div>
-        <div class="mt-20 mb-8">
-            <a class="shadow-md rounded-full px-4 py-2 bg-black  font-medium text-white mr-2">Featured</a>
-            <a class="shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Popular</a>
-            <a class="shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Recent</a>
+        <div class="tab mt-20 mb-8">
+            <a class="tab-item shadow-md rounded-full px-4 py-2 bg-black  font-medium text-white mr-2">Featured</a>
+            <a class="tab-item shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Popular</a>
+            <a class="tab-item shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Recent</a>
         </div>
-        <div class="md:flex">
-            <div class="divide-y divide-gray-100 mt-5 md:mr-4">
-                <div class="max-w-2xl mx-auto bg-white rounded-row-item shadow-md overflow-hidden md:max-w-xs ">
-                    <div class="flex md:block">
-                        <div class="flex-shrink-0">
-                            <img class="h-36 w-36  object-cover md:w-full" src="https://images.unsplash.com/photo-1506374322094-6021fc3926f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3lkbmV5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Man looking at item at a store">
-                        </div>
-                        <div class="p-4">
-                            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Big Mouth Burgers</a>
-                            <p class="mt-2 text-gray-500">American food</p>
-                            <p class="mt-2 text-gray-500">1.6</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="store-list md:flex">
             <div class="divide-y divide-gray-100 mt-5">
                 <div class="max-w-2xl mx-auto bg-white rounded-row-item shadow-md overflow-hidden md:max-w-xs ">
                     <div class="flex md:block">
@@ -85,45 +71,54 @@
                 </div>
             </div>
         </div>
-        <a href="/home/home.html" class="float-btn inline-flex items-center justify-center w-14 h-14 mr-2 text-indigo-100 transition-colors duration-150 bg-black rounded-full focus:outline-none hover:bg-gray-900">
+        <button id="card_open" class="float-btn inline-flex items-center justify-center w-14 h-14 mr-2 text-indigo-100 transition-colors duration-150 bg-black rounded-full focus:outline-none hover:bg-gray-900">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-        </a>
+        </button>
     </div>
 </main>
-    
-    
+
+<div id="card_panel" class="main-modal bg-black bg-opacity-50 fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center hidden">
+    <div class="modal-container bg-white w-full mx-auto rounded-t-xl z-50 overflow-y-auto">
+        <div class="modal-content py-4 text-left px-6 h-full">
+            <div class="flex justify-between items-center pb-3">
+                <p class="text-2xl font-bold text-black">Create New</p>
+                <div id="card_close" class="modal-close cursor-pointer z-50">
+                    <svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="my-5 mr-5 ml-5">
+                <div>
+                    <input id="group-buying" type="radio" name="type" value="group buying" />
+                    <label for="group-buying">group buying</label>
+                </div>
+                <div>
+                    <input id="online-shop" type="radio" name="type" value="online shop" />
+                    <label for="online-shop">online shop</label>
+                </div>
+                <div>
+                    <input id="QRCode-ordering" type="radio" name="type" value="QR code ordering" />
+                    <label for="QRCode-ordering">QR code ordering</label>
+                </div>
+
+            </div>
+            <div class="flex justify-end pt-2 space-x-14">
+                <p>Cancel</p><p>Confirm</p>
+            </div>
+        </div>
+    </div>
+</div>
     
 <!-- socket IO Served by the server
 <script src="/socket.io/socket.io.js"></script> -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="./js/lib/jquery-3.6.0.min.js"></script>
 
 <!-- reference Moment.js library -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
-
-
+<script src="./js/lib/moment.min.js" type="text/javascript"></script>
+<script src="./env.js"></script>
+<script src="./js/index.js"></script>
 </body>
-<script>
-    const nav = document.getElementById('site-menu');
-    const header = document.getElementById('top');
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY >=400) { // adjust this value based on site structure and header image height
-            nav.classList.add('nav-sticky');
-            header.classList.add('pt-scroll');
-        } else {
-            nav.classList.remove('nav-sticky');
-            header.classList.remove('pt-scroll');
-        }
-    });
-    navToggle=()=>{
-        let btn = document.getElementById('menuBtn');
-        let nav = document.getElementById('menu');
-
-        btn.classList.toggle('open');
-        nav.classList.toggle('flex');
-        nav.classList.toggle('hidden');
-    }
-</script>
 </html>

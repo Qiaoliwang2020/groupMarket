@@ -31904,6 +31904,39 @@ video {
   bottom: 10px;
 }
 
+.modal-container{
+  height: 50%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.card_open {
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-name: card_open;
+          animation-name: card_open;
+}
+
+@-webkit-keyframes card_open {
+  from {
+    height: 1%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes card_open {
+  from {
+    height: 1%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
