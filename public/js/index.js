@@ -1,11 +1,12 @@
 $(document).ready(function(){
     listLoading();
     $('.tab .tab-item').on('click',function (){
-        renderStoreList();
+        tabChangeStyle($(this));
+        loading()
     })
-    $('.float-btn').on('click',function (){
-        bottomSheetToggle();
-    })
+    // $('.float-btn').on('click',function (){
+    //     bottomSheetToggle();
+    // })
     const card_open = document.getElementById('card_open')
     const card_close = document.getElementById('card_close')
     const card_panel = document.getElementById('card_panel')
@@ -59,7 +60,8 @@ renderStoreList = () =>{
 }
 listLoading = ()=>{
     $('.store-list').empty();
-    let listLoading = `<div class="border border-gray-300 shadow rounded-row-item p-4 max-w-sm w-full mx-auto">
+    for(let i = 0 ; i <  3; i++){
+        let listLoading = `<div class="mt-4 border border-gray-100 shadow rounded-row-item p-4 max-w-sm w-full mx-auto">
                 <div class="animate-pulse flex space-x-4">
                     <div class="bg-gray-400 h-12 w-12"></div>
                     <div class="flex-1 space-y-4 py-1">
@@ -71,9 +73,25 @@ listLoading = ()=>{
                     </div>
                 </div>
             </div>`;
-    $('.store-list').append(listLoading);
+        $('.store-list').append(listLoading);
+    }
+
 }
 
-bottomSheetToggle = ()=>{
-
+loading = ()=>{
+    $('.store-list').empty();
+    let loading = `<div class="flex justify-center">
+        <div class="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+    </div>`
+    $('.store-list').append(loading);
+}
+tabChangeStyle = (tab)=>{
+    tab.addClass('text-white').removeClass('text-gray-600');
+    tab.addClass('bg-black');
+    tab.siblings().removeClass('text-white');
+    tab.siblings().removeClass('bg-black');
 }
