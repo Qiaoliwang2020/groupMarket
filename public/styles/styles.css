@@ -31881,15 +31881,11 @@ video {
 }
 
 .open .hamburger__top-bun {
-  transform:
-            rotate(45deg)
-            translateY(0px);
+  transform: rotate(45deg) translateY(0px);
 }
 
 .open .hamburger__bottom-bun {
-  transform:
-            rotate(-45deg)
-            translateY(0px);
+  transform:rotate(-45deg) translateY(0px);
 }
 
 .rounded-row-item{
@@ -31902,6 +31898,11 @@ video {
   right: 0px;
   left: 0px;
   bottom: 10px;
+}
+
+.create-link{
+  line-height: 32px;
+  margin-left: 10px;
 }
 
 .modal-container{

@@ -52,15 +52,11 @@
 }
 
 .open .hamburger__top-bun {
-    transform:
-            rotate(45deg)
-            translateY(0px);
+    transform: rotate(45deg) translateY(0px);
 }
 
 .open .hamburger__bottom-bun {
-    transform:
-            rotate(-45deg)
-            translateY(0px);
+    transform:rotate(-45deg) translateY(0px);
 }
 .rounded-row-item{
     border-radius: 20px;
@@ -71,6 +67,10 @@
     right: 0px;
     left: 0px;
     bottom: 10px;
+}
+.create-link{
+    line-height: 32px;
+    margin-left: 10px;
 }
 .modal-container{
     height: 50%;
@@ -86,7 +86,6 @@
     width: 70px;
     text-align: center;
 }
-
 .spinner > div {
     width: 18px;
     height: 18px;
