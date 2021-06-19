@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    listLoading();
+    renderStoreList();
     $('.tab .tab-item').on('click',function (){
         tabChangeStyle($(this));
         loading()
