@@ -15,7 +15,7 @@ client.connect();
 
 let port = process.env.PORT || 8080;
 
-app.use(express.static(__dirname + '/antd-demo/build'));
+app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
