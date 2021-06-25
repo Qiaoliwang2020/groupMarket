@@ -32,13 +32,9 @@
 <main>
     <div class="container  mx-auto px-4 pt-20">
         <div class="flex item-center">
-            <div class="text-md">Choose your location</div>
-            <div class="mt-1 ml-2">
-                <svg class="h-5 w-5 text-black"  width="24" height="10" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z"/>
-                    <path d="M18 15l-6-6l-6 6h12" transform="rotate(180 12 12)" />
-                </svg>
-            </div>
+            <select class="text-md">
+                <option>Choose your location</option>
+            </select>
         </div>
         <div class="flex search-bar bg-gray-100 w-full rounded-full py-1 my-4 pl-2">
             <input class="flex-1 text-md bg-gray-100 pl-2 rounded-full focus:outline-none" type="text" placeholder="Search for a store" />
@@ -55,7 +51,7 @@
             <a class="tab-item shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Popular</a>
             <a class="tab-item shadow-md rounded-full px-4 py-2 font-medium text-gray-600 mr-2">Recent</a>
         </div>
-        <div class="store-list md:flex">
+        <div class="store-list md:flex flex-wrap">
             <div class="mt-4 border border-gray-100 shadow rounded-row-item p-4 max-w-sm w-full mx-auto">
                 <div class="animate-pulse flex space-x-4">
                     <div class="bg-gray-400 h-12 w-12"></div>

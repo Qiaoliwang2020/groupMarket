@@ -24,7 +24,7 @@
   "scripts": {
     "start": "export NODE_ENV=production && nodemon server.js",
     "dev": "export NODE_ENV=dev && nodemon server.js",
-    "build:css": "postcss antd-demo/src/style/tailwind.css -o antd-demo/src/style/style.css"
+    "build:css": "postcss public/styles/tailwind.css -o public/styles/styles.css"
   },
   "repository": {
     "type": "git",

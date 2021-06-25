@@ -4,9 +4,7 @@ $(document).ready(function(){
         tabChangeStyle($(this));
         loading()
     })
-    // $('.float-btn').on('click',function (){
-    //     bottomSheetToggle();
-    // })
+
     const card_open = document.getElementById('card_open')
     const card_close = document.getElementById('card_close')
     const card_panel = document.getElementById('card_panel')
@@ -39,11 +37,12 @@ $(document).ready(function(){
 
     card_open.addEventListener('click', modalState)
     card_close.addEventListener('click', modalState)
-})
+});
 renderStoreList = () =>{
     $('.store-list').empty();
-    let list = `<div class="divide-y divide-gray-100 mt-5 md:mr-4">
-                <div class="max-w-2xl mx-auto bg-white rounded-row-item shadow-md overflow-hidden md:max-w-xs ">
+    for(let i = 0 ; i <  5; i++) {
+        let list = `<div class="store-item-vertical mt-5">
+                <div class="max-w-2xl mx-auto bg-white rounded-row-item shadow-md overflow-hidden">
                     <div class="flex md:block">
                         <div class="flex-shrink-0">
                             <img class="h-36 w-36  object-cover md:w-full" src="https://images.unsplash.com/photo-1506374322094-6021fc3926f1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c3lkbmV5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Man looking at item at a store">
@@ -56,7 +55,9 @@ renderStoreList = () =>{
                     </div>
                 </div>
             </div>`
-    $('.store-list').append(list);
+        $('.store-list').append(list);
+    }
+
 }
 listLoading = ()=>{
     $('.store-list').empty();
@@ -89,6 +90,7 @@ loading = ()=>{
     </div>`
     $('.store-list').append(loading);
 }
+
 tabChangeStyle = (tab)=>{
     tab.addClass('text-white').removeClass('text-gray-600');
     tab.addClass('bg-black');

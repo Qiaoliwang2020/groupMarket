@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
     // initialization modal and datepicker
-    $('#modal-new-card').modal();
-    $('.datepicker').datepicker();
+    //$('#modal-new-card').modal();
+    //$('.datepicker').datepicker();
 
     getUserInfo();
     getCities();
@@ -169,5 +169,7 @@ getUserInfo =()=>{
         getCards(id_token.sub);
     });
 }
+
+
 
 

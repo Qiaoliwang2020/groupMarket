@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import reqwest from 'reqwest';
-import { Tabs,List, Avatar, Button, Skeleton } from 'antd';
+import { List, Avatar, Button, Skeleton } from 'antd';
 const count = 3;
 const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat&noinfo`;
 
-
-const { TabPane } = Tabs;
-
-function callback(key) {
-    console.log(key);
-}
 export default class StoreList extends Component {
     state = {
         initLoading: true,
@@ -78,41 +72,38 @@ export default class StoreList extends Component {
             ) : null;
 
         return (
-            <Tabs defaultActiveKey="1" onChange={callback}>
-                <TabPane tab="Tab 1" key="1">
-                    <List
-                        loading={initLoading}
-                        itemLayout="horizontal"
-                        loadMore={loadMore}
-                        dataSource={list}
-                        renderItem={item => (
-                            <List.Item
-                                className={'max-w-2xl bg-white rounded-row-item shadow-md overflow-hidden mb-4'}
-                                extra={
-                                    <img
-                                        className="h-36 w-36 object-cover md:w-full"
-                                        alt="logo"
-                                        src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                                    />
-                                }
-                               >
-                                <Skeleton avatar title={false} loading={item.loading} active>
-                                    <List.Item.Meta
-                                        title={<a href="https://ant.design">{item.name.last}</a>}
-                                        description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                                    />
-                                </Skeleton>
-                            </List.Item>
-                        )}
-                    />
-                </TabPane>
-                <TabPane tab="Tab 2" key="2">
-                    Content of Tab Pane 2
-                </TabPane>
-                <TabPane tab="Tab 3" key="3">
-                    Content of Tab Pane 3
-                </TabPane>
-            </Tabs>
+            <div>
+                <div className="tab mt-20 mb-8">
+                    <Button className="tab-item shadow-md rounded-full bg-black  font-medium text-white mr-2">All</Button>
+                    <Button className="tab-item shadow-md rounded-full font-medium text-gray-600 mr-2">Food</Button>
+                    <Button className="tab-item shadow-md rounded-full font-medium text-gray-600 mr-2">Item</Button>
+                </div>
+                <List
+                    loading={initLoading}
+                    itemLayout="horizontal"
+                    loadMore={loadMore}
+                    dataSource={list}
+                    renderItem={item => (
+                        <List.Item
+                            className={'max-w-2xl bg-white rounded-row-item shadow-md overflow-hidden mb-4'}
+                            extra={
+                                <img
+                                    className="h-36 w-36 object-cover md:w-full"
+                                    alt="logo"
+                                    src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                                />
+                            }
+                        >
+                            <Skeleton avatar title={false} loading={item.loading} active>
+                                <List.Item.Meta
+                                    title={<a href="https://ant.design">{item.name.last}</a>}
+                                    description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                />
+                            </Skeleton>
+                        </List.Item>
+                    )}
+                />
+            </div>
         );
     }
 }

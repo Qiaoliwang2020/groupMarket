@@ -1,9 +1,6 @@
 @import '~antd/dist/antd.css';
 @import "./style/style.css";
 /** rewrite antd tab **/
-a:hover{
-    color: white;
-}
 .ant-tabs-tab{
     padding: 0.5rem 1rem;
     box-shadow: 0 4px 6px -1px #f2f2f2, 0 2px 4px -1px #f2f2f2;
@@ -57,6 +54,25 @@ a:hover{
     .ant-list-item-meta{
         margin-left: 1rem;
     }
+}
+.ant-cascader-input{
+    &.ant-input{
+        border:0px;
+        box-shadow:unset;
+        padding: 0px 24px 0px 0px;
+    }
+}
+.ant-cascader-picker:focus {
+    .ant-cascader-input{
+        border: 0px!important;
+        box-shadow:unset;
+    }
+}
+.ant-cascader-picker-label{
+    padding: 0 20px 0 10px;
+}
+.ant-cascader-picker-arrow{
+    color: #000000;
 }
 
 @media (min-width: 768px){
